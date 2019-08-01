@@ -1,4 +1,3 @@
-// Karma configuration file for CI.
 
 module.exports = function (config) {
   config.set({
@@ -9,12 +8,12 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-junit-reporter'),
-      require('@angular/cli/plugins/karma')
+      require('@angular/cli/plugins/karma'),
+      require('karma-htmlfile-reporter')  
     ],
-    reporters: ['junit'],
-    junitReporter: {
-        outputDir: 'karma-results',
-        outputFile: 'karma-results.xml'
+    reporters: ['progress', 'html'],
+    htmlReporter: {
+      outputFile: 'tests/units.html',
     },
     angularCli: {
       environment: 'dev',
