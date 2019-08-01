@@ -1,4 +1,3 @@
-
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -22,6 +21,10 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     browsers: ['ChromeHeadless'],
     autoWatch: false,
-    singleRun: true
+    singleRun: true,
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3, 
+    browserDisconnectTimeout : 210000,
+    browserNoActivityTimeout : 210000,
   });
 };
